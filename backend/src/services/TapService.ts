@@ -40,7 +40,7 @@ export class TapService {
       const newTapCount = userTap.taps + 1;
       let newScore = userTap.score;
       
-      if (userRole !== UserRole.NIKITA) {
+      if (userRole !== UserRole.LOSER) {
         newScore = calculateScore(newTapCount);
       }
       
@@ -57,7 +57,7 @@ export class TapService {
         }
       });
       
-      if (userRole !== UserRole.NIKITA) {
+      if (userRole !== UserRole.LOSER) {
         await tx.round.update({
           where: { id: roundId },
           data: {

@@ -28,7 +28,7 @@ export interface UserTap {
 export enum UserRole {
   SURVIVOR = 'SURVIVOR',
   ADMIN = 'ADMIN',
-  NIKITA = 'NIKITA'
+  LOSER = 'LOSER'
 }
 
 export enum RoundStatus {

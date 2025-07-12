@@ -7,8 +7,8 @@ export const getUserRole = (username: string): UserRole => {
     return UserRole.ADMIN;
   }
   
-  if (lowerUsername === 'никита') {
-    return UserRole.NIKITA;
+  if (lowerUsername === 'неудачник') {
+    return UserRole.LOSER;
   }
   
   return UserRole.SURVIVOR;

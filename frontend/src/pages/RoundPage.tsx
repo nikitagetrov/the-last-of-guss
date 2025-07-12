@@ -76,8 +76,8 @@ export const RoundPage: React.FC = () => {
     return new Date(dateString).toLocaleString('ru-RU');
   };
 
-  const canTap = round.status === 'ACTIVE' && user?.role !== 'NIKITA';
-  const isNikita = user?.role === 'NIKITA';
+  const canTap = round.status === 'ACTIVE' && user?.role !== 'LOSER';
+  const isLoser = user?.role === 'LOSER';
 
   return (
     <div className="min-h-screen p-6">
@@ -152,9 +152,9 @@ export const RoundPage: React.FC = () => {
           <div className="bg-white bg-opacity-10 rounded-lg p-6 text-center">
             <h2 className="text-2xl font-bold text-white mb-4">Ваша статистика</h2>
             
-            {isNikita && (
+            {isLoser && (
               <div className="mb-4 p-4 bg-red-500 bg-opacity-20 rounded text-red-200">
-                ⚠️ Никита, твои тапы не засчитываются в статистике!
+                ⚠️ Неудачник, твои тапы не засчитываются в статистике!
               </div>
             )}
             
@@ -173,11 +173,11 @@ export const RoundPage: React.FC = () => {
               <div className="mb-4">
                 <Goose
                   onClick={() => {
-                    if (canTap || isNikita) {
+                    if (canTap || isLoser) {
                       tapMutation.mutate();
                     }
                   }}
-                  disabled={!canTap && !isNikita}
+                  disabled={!canTap && !isLoser}
                   className="w-48 h-48"
                 />
               </div>
@@ -200,7 +200,7 @@ export const RoundPage: React.FC = () => {
                 </p>
               )}
               
-              {round.status === 'ACTIVE' && isNikita && (
+              {round.status === 'ACTIVE' && isLoser && (
                 <p className="text-red-300 text-sm">
                   Можешь тапать, но очки не засчитываются
                 </p>
@@ -216,7 +216,7 @@ export const RoundPage: React.FC = () => {
             <p>• Каждый 11-й тап дает 10 очков</p>
             <p>• Тапать можно только во время активного раунда</p>
             <p>• Побеждает игрок с наибольшим количеством очков</p>
-            <p>• Тапы Никиты не засчитываются в статистике</p>
+            <p>• Тапы Неудачника не засчитываются в статистике</p>
           </div>
         </div>
       </div>

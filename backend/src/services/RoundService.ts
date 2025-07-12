@@ -42,7 +42,7 @@ export class RoundService {
       let winner;
       if (status === 'COMPLETED' && round.userTaps.length > 0) {
         const sortedTaps = round.userTaps
-          .filter(tap => tap.user.role !== 'NIKITA')
+          .filter(tap => tap.user.role !== 'LOSER')
           .sort((a, b) => b.score - a.score);
         
         if (sortedTaps.length > 0) {
@@ -85,7 +85,7 @@ export class RoundService {
     let winner;
     if (status === 'COMPLETED' && round.userTaps.length > 0) {
       const sortedTaps = round.userTaps
-        .filter(tap => tap.user.role !== 'NIKITA')
+        .filter(tap => tap.user.role !== 'LOSER')
         .sort((a, b) => b.score - a.score);
       
       if (sortedTaps.length > 0) {

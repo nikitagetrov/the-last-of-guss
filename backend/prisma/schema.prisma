@@ -51,7 +51,7 @@ model UserTap {
 enum UserRole {
   SURVIVOR
   ADMIN
-  NIKITA
+  LOSER
 }
 
 enum RoundStatus {

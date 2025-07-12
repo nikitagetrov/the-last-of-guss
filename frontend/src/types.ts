@@ -1,7 +1,7 @@
 export interface User {
   id: string;
   username: string;
-  role: 'SURVIVOR' | 'ADMIN' | 'NIKITA';
+  role: 'SURVIVOR' | 'ADMIN' | 'LOSER';
 }
 
 export interface Round {
