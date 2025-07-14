@@ -17,7 +17,7 @@ export const Goose: React.FC<GooseProps> = ({ onClick, disabled = false, classNa
         {/* Гусь */}
         <img
           src="/Goose-PNG-Picture.png"
-          alt="Гусь с мутацией G-42"
+          alt="Гусь с мутацией G-42-"
           className="relative z-10 w-full h-full object-contain"
           draggable={false}
           style={{
